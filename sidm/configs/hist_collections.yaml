@@ -19,6 +19,12 @@ photon_base: &photon_base
   - "photon_pt"
   - "photon_eta_phi"
 
+photon_id: &photon_id
+  - "photon_singletower"
+  - "photon_SigmaIEtaIEta"
+  - "photon_AnyPFIsoWithEAAndQuadScaling"
+  - "photon_AnyPFIsoWithEACut"
+
 muon_base: &muon_base
   - "muon_n"
   - "muon_pt"

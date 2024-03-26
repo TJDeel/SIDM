@@ -118,26 +118,26 @@ hist_defs = {
     ),
     "photon_singletower": h.Histogram(
         [
-            h.Axis(hist.axis.Regular(100, 0, 200, name="photon_singletower"),
+            h.Axis(hist.axis.Regular(50, 0, .2, name="photon_singletower"),
                    lambda objs, mask: objs["photons"].PhoSingleTowerHadOverEmCut_0),
         ],
     ),
     "photon_SigmaIEtaIEta": h.Histogram(
         [
-            h.Axis(hist.axis.Regular(100, 0, 200, name="photon_SigmaIEtaIEta"),
+            h.Axis(hist.axis.Regular(20, 0, .08, name="photon_SigmaIEtaIEta"),
                    lambda objs, mask: objs["photons"].PhoFull5x5SigmaIEtaIEtaCut_0),
         ],
     ),
     "photon_AnyPFIsoWithEAAndQuadScaling": h.Histogram(
         [
             h.Axis(hist.axis.Regular(100, 0, 200, name="photon_AnyPFIsoWithEAAndQuadScaling"),
-                   lambda objs, mask: objs["photons"].PhoAnyPFIsoWithEAAndQuadScalingCut_0),
+                   lambda objs, mask: objs["photons"].pt),
         ],
     ),
     "photon_AnyPFIsoWithEACut": h.Histogram(
         [
             h.Axis(hist.axis.Regular(100, 0, 200, name="photon_AnyPFIsoWithEACut"),
-                   lambda objs, mask: objs["photons"].PhoAnyPFIsoWithEACut_0),
+                   lambda objs, mask: objs["photons"].pt),
         ],
     ),
     "photon_eta_phi": h.Histogram(

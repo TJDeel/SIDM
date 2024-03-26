@@ -7,7 +7,7 @@ primary_objs = {
     "cosmicveto": lambda evts: evts.cosmicveto,
     "pvs": lambda evts: evts.pv,
     "electrons": lambda evts: evts.electron,
-    "photons": lambda evts: evts.pfphoton,
+    "photons": lambda evts: evts.photon,
     "muons": lambda evts: evts.muon,
     "dsaMuons": lambda evts: evts.dsamuon,
     "ntuple_ljs": lambda evts: evts.pfjet,

@@ -376,3 +376,41 @@ barrelE_ID-MissingHits_matched: &barrelE_ID-MissingHits_matched
     electrons:
       - *e_barrelE_ID-MissingHits
       - "dR(e, A) < 0.5"
+
+# Selections for Photons only
+# All reco photons in the barrel
+barrelpho: &barrelpho
+  evt_cuts:
+    - "Keep all evts"
+  obj_cuts: &obj_barrelpho
+    photons: &e_barrelpho
+      - "|eta| < 2.5"
+      
+# same as above, but with photon-genA dR matching
+barrelpho_matched: &barrelpho_matched
+  <<: *barrelpho
+  obj_cuts:
+    <<: *obj_barrelpho
+    photons:
+      - *e_barrelpho
+      - "dR(e, A) < 0.5"
+
+# Loose reco photons in the barrel
+looseBarrelpho: &looseBarrelpho
+  evt_cuts:
+    - "Keep all evts"
+  obj_cuts: &obj_looseBarrelpho
+    <<: *obj_barrelpho
+    photons: &e_looseBarrelpho
+      - *e_barrelpho
+      - "pT > 20 GeV"
+      - "looseID"
+
+# same as above, but with photon-genA dR matching
+looseBarrelpho_matched: &looseBarrelpho_matched
+  <<: *looseBarrelE
+  obj_cuts:
+    <<: *obj_loosebarrelE
+    electrons:
+      - *e_looseBarrelpho
+      - "dR(e, A) < 0.5"

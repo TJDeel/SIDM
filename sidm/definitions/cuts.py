@@ -53,6 +53,7 @@ obj_cut_defs = {
     "photons":{
         "pT > 20 GeV": lambda objs: objs["photons"].pt > 20,
         "|eta| < 2.5": lambda objs: abs(objs["photons"].scEta) < 2.5, # fixme: do we want eta or scEta (which is only available in v4)?
+        "dR(e, A) < 0.5": lambda objs: dR(objs["photons"], objs["genAs_toE"]) < 0.5,
         #Loose ID = bit 0
         "looseID": lambda objs: check_bit(objs["photons"].idResults,0),
     },

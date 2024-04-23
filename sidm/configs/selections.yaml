@@ -384,7 +384,7 @@ barrelpho: &barrelpho
     - "Keep all evts"
   obj_cuts: &obj_barrelpho
     photons: &e_barrelpho
-      - "|eta| < 2.5"
+      - "|eta| < 1.479"
       
 # same as above, but with photon-genA dR matching
 barrelpho_matched: &barrelpho_matched
@@ -393,24 +393,24 @@ barrelpho_matched: &barrelpho_matched
     <<: *obj_barrelpho
     photons:
       - *e_barrelpho
-      - "dR(e, A) < 0.5"
+      - "dR(g, A) < 0.5"
 
 # Loose reco photons in the barrel
-looseBarrelpho: &looseBarrelpho
+loosebarrelpho: &loosebarrelpho
   evt_cuts:
     - "Keep all evts"
-  obj_cuts: &obj_looseBarrelpho
+  obj_cuts: &obj_loosebarrelpho
     <<: *obj_barrelpho
-    photons: &e_looseBarrelpho
+    photons: &e_loosebarrelpho
       - *e_barrelpho
       - "pT > 20 GeV"
       - "looseID"
 
 # same as above, but with photon-genA dR matching
-looseBarrelpho_matched: &looseBarrelpho_matched
-  <<: *looseBarrelE
+looseBarrelpho_matched: &loosebarrelpho_matched
+  <<: *loosebarrelpho
   obj_cuts:
-    <<: *obj_loosebarrelE
+    <<: *obj_loosebarrelpho
     electrons:
-      - *e_looseBarrelpho
+      - *e_loosebarrelpho
       - "dR(e, A) < 0.5"
